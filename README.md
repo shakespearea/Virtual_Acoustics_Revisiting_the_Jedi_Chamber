@@ -11,6 +11,11 @@ You can read the original report here: [Report on the Auralisation and Analysis 
 Im this project, I will be investigating other methods and tools which may be used to model the very same room with the aim to familiarise myself with these tools and learn their strengths and weaknesses.
 
 
+## Python Build Instructions
+Developed with Python `3.12.6`
+```
+pip install matplotlib
+```
 
 
 ## Disclaimer
