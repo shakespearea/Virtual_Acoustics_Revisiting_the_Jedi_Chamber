@@ -1,20 +1,9 @@
 from math import log
 from matplotlib import pyplot
 from numpy import arange
+from LoudspeakerDefinitions import l1
 
 print("SPL Modeller")
-
-# L1 Specs
-SPL_max = 160
-# Bandwidth (Hz)
-class bw:
-    min = 35
-    max = 20000
-# Dimensions (mm)
-class d:
-    w = 1500
-    h = 1005
-    d = 750
 
 # SPL = 20log(p/p0) where p0=20^-6
 p0 = pow(20, -6)
@@ -30,8 +19,11 @@ def Calc_SPL_From_Distance(r, l_ref, r_ref):
 r_max = 250
 l = []
 for r in range(1, r_max):
-    l.append(Calc_SPL_From_Distance(r, SPL_max, 1))
+    l.append(Calc_SPL_From_Distance(r, l1.SPL_max, 1))
 
 x = arange(r_max-1)
 pyplot.plot(l,x)
+pyplot.title('L1')
+pyplot.xlabel('SPL (dB)')
+pyplot.ylabel('Distance (m)')
 pyplot.show()
